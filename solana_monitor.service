@@ -1,0 +1,13 @@
+[Unit]
+Description=Solana Wallet Monitor
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/solana_monitor
+Environment="PATH=/root/solana_monitor/venv/bin"
+ExecStart=/root/solana_monitor/venv/bin/python /root/solana_monitor/monitor_wallet.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
